@@ -101,22 +101,18 @@ static int ICACHE_FLASH_ATTR tcn75_set_cfg(int idx, uint8_t cfgval)
 	uint8_t addr =  TCN_BASE_ADDR | idx;
 	int rc = 0;
 	// set in one shot mode
-//	os_printf("%d:%x\n",idx,cfgval);
 	i2c_start();
 	i2c_writeByte(addr << 1);
 	if (!i2c_check_ack()) {
-//		os_printf("r1\n");
 		goto out_err;
 	}
 	i2c_writeByte(TCN_CFG);
 	if (!i2c_check_ack()) {
-//		os_printf("r2\n");
 		goto out_err;
 	}
 	// place all in powerdown mode
 	i2c_writeByte(cfgval);
 	if (!i2c_check_ack()) {
-//		os_printf("r3\n");
 		goto out_err;
 	}
 
