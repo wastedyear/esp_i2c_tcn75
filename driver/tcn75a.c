@@ -1,3 +1,9 @@
+/*
+  Author: Alexander Atanasov <alex@zazolabs.com>
+
+  License: Anyone can use it as long as he shares his OWN code.
+
+*/
 
 #include "ets_sys.h"
 #include "os_type.h"
